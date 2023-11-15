@@ -8,15 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var rootNode = Node(name: "root", children: [
+	   Node(name: "Child 1", children: [
+		  Node(name: "Grandchild 1", children: [
+			 Node(name: "Great Grandchild 1")
+		  ]),
+		  Node(name: "Grandchild 2", children: [
+			 Node(name: "Great Grandchild 2")
+		  ]),
+	   ]),
+	   Node(name: "Child 2", children: [
+		  Node(name: "Grandchild 4"),
+	   ]),
+	   Node(name: "Child 3", children: [
+		  Node(name: "Grandchild 3"),
+	   ]),
+    ])
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-	 
+	   NavigationView {
+		  TreeView(node: rootNode)
+			 .navigationBarTitle("Тестовое задание")
+			 .navigationBarItems(
+				trailing:
+				    HStack {
+					   Button(action: {
+						  let newChild = Node(name: "Child \(self.rootNode.children.count + 1)")
+						  self.rootNode.addChild(newChild)
+					   }) {
+						  Text("Add")
+					   }
+					   Button(action: {
+						 
+					   }) {
+						  Text("Delete")
+					   }
+				    }
+			 )
+	   }
     }
 }
 

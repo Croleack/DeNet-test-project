@@ -11,6 +11,8 @@
 		E9D4F6942B051245005DBAD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4F6932B051245005DBAD6 /* ContentView.swift */; };
 		E9D4F6962B051246005DBAD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D4F6952B051246005DBAD6 /* Assets.xcassets */; };
 		E9D4F6992B051246005DBAD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D4F6982B051246005DBAD6 /* Preview Assets.xcassets */; };
+		E9D4F6A42B0514C7005DBAD6 /* ThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4F6A32B0514C7005DBAD6 /* ThreeView.swift */; };
+		E9D4F6A72B051506005DBAD6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4F6A62B051506005DBAD6 /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		E9D4F6932B051245005DBAD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9D4F6952B051246005DBAD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9D4F6982B051246005DBAD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9D4F6A32B0514C7005DBAD6 /* ThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeView.swift; sourceTree = "<group>"; };
+		E9D4F6A62B051506005DBAD6 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D4F6932B051245005DBAD6 /* ContentView.swift */,
+				E9D4F6A32B0514C7005DBAD6 /* ThreeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -86,6 +91,7 @@
 		E9D4F6A12B0512D2005DBAD6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E9D4F6A52B0514E1005DBAD6 /* Models */,
 				E9D4F6A02B051281005DBAD6 /* Views */,
 			);
 			path = Modules;
@@ -97,6 +103,14 @@
 				E9D4F6952B051246005DBAD6 /* Assets.xcassets */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		E9D4F6A52B0514E1005DBAD6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9D4F6A62B051506005DBAD6 /* Node.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D4F6A42B0514C7005DBAD6 /* ThreeView.swift in Sources */,
 				E9D4F6942B051245005DBAD6 /* ContentView.swift in Sources */,
 				E9D4F6922B051245005DBAD6 /* DeNetApp.swift in Sources */,
+				E9D4F6A72B051506005DBAD6 /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
