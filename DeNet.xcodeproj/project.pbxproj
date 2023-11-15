@@ -51,9 +51,9 @@
 		E9D4F6902B051245005DBAD6 /* DeNet */ = {
 			isa = PBXGroup;
 			children = (
-				E9D4F6912B051245005DBAD6 /* DeNetApp.swift */,
-				E9D4F6932B051245005DBAD6 /* ContentView.swift */,
-				E9D4F6952B051246005DBAD6 /* Assets.xcassets */,
+				E9D4F6A12B0512D2005DBAD6 /* Modules */,
+				E9D4F69F2B051271005DBAD6 /* Application */,
+				E9D4F6A22B0512DC005DBAD6 /* Supporting */,
 				E9D4F6972B051246005DBAD6 /* Preview Content */,
 			);
 			path = DeNet;
@@ -65,6 +65,38 @@
 				E9D4F6982B051246005DBAD6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E9D4F69F2B051271005DBAD6 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E9D4F6912B051245005DBAD6 /* DeNetApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E9D4F6A02B051281005DBAD6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9D4F6932B051245005DBAD6 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9D4F6A12B0512D2005DBAD6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E9D4F6A02B051281005DBAD6 /* Views */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E9D4F6A22B0512DC005DBAD6 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				E9D4F6952B051246005DBAD6 /* Assets.xcassets */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
