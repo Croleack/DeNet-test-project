@@ -10,19 +10,19 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var rootNode = Node(name: "root", children: [
-	   Node(name: "Child 1", children: [
-		  Node(name: "Grandchild 1", children: [
-			 Node(name: "Great Grandchild 1")
+	   Node(name: generateRandomName(), children: [
+		  Node(name: generateRandomName(), children: [
+			 Node(name: generateRandomName())
 		  ]),
-		  Node(name: "Grandchild 2", children: [
-			 Node(name: "Great Grandchild 2")
+		  Node(name: generateRandomName(), children: [
+			 Node(name: generateRandomName())
 		  ]),
 	   ]),
-	   Node(name: "Child 2", children: [
-		  Node(name: "Grandchild 4"),
+	   Node(name: generateRandomName(), children: [
+		  Node(name: generateRandomName()),
 	   ]),
-	   Node(name: "Child 3", children: [
-		  Node(name: "Grandchild 3"),
+	   Node(name: generateRandomName(), children: [
+		  Node(name: generateRandomName()),
 	   ]),
     ])
     
@@ -34,7 +34,7 @@ struct ContentView: View {
 				trailing:
 				    HStack {
 					   Button(action: {
-						  let newChild = Node(name: "Child \(self.rootNode.children.count + 1)")
+						  let newChild = Node(name: generateRandomName())
 						  self.rootNode.addChild(newChild)
 					   }) {
 						  Text("Add")
@@ -48,6 +48,13 @@ struct ContentView: View {
 			 )
 	   }
     }
+}
+
+func generateRandomName() -> String {
+    var randomBytes = [UInt8](repeating: 0, count: 20)
+    _ = SecRandomCopyBytes(kSecRandomDefault, randomBytes.count, &randomBytes)
+    
+    return randomBytes.map { String(format: "%02hhx", $0) }.joined()
 }
 
 struct ContentView_Previews: PreviewProvider {
