@@ -30,22 +30,7 @@ struct ContentView: View {
 	   NavigationView {
 		  TreeView(node: rootNode)
 			 .navigationBarTitle("Тестовое задание")
-			 .navigationBarItems(
-				trailing:
-				    HStack {
-					   Button(action: {
-						  let newChild = Node(name: generateRandomName())
-						  self.rootNode.addChild(newChild)
-					   }) {
-						  Text("Add")
-					   }
-					   Button(action: {
-						 
-					   }) {
-						  Text("Delete")
-					   }
-				    }
-			 )
+
 	   }
     }
 }

@@ -18,16 +18,4 @@ class Node: Identifiable {
 	   self.children = children
 	   self.children.forEach { $0.parent = self }
     }
-    
-    func addChild(_ child: Node) {
-	   children.append(child)
-	   child.parent = self
-    }
-    
-    func removeChild(_ child: Node) {
-	   if let index = children.firstIndex(where: { $0.id == child.id }) {
-		  children.remove(at: index)
-		  child.parent = nil
-	   }
-    }
 }
