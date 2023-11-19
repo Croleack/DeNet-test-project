@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E93C0D6E2B08F50B00E26147 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C0D6D2B08F50B00E26147 /* RealmService.swift */; };
 		E9D4F6922B051245005DBAD6 /* DeNetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4F6912B051245005DBAD6 /* DeNetApp.swift */; };
 		E9D4F6942B051245005DBAD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4F6932B051245005DBAD6 /* ContentView.swift */; };
 		E9D4F6962B051246005DBAD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D4F6952B051246005DBAD6 /* Assets.xcassets */; };
 		E9D4F6992B051246005DBAD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D4F6982B051246005DBAD6 /* Preview Assets.xcassets */; };
 		E9D4F6A72B051506005DBAD6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4F6A62B051506005DBAD6 /* Node.swift */; };
 		E9D4F6C52B07691B005DBAD6 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4F6C42B07691B005DBAD6 /* TreeView.swift */; };
+		EBB0DE340E4B2C511C84C2E1 /* Pods_DeNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C7B34C0040E77E68E49DEE /* Pods_DeNet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05C7B34C0040E77E68E49DEE /* Pods_DeNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72581D55740DED9F6C107CC9 /* Pods-DeNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeNet.debug.xcconfig"; path = "Target Support Files/Pods-DeNet/Pods-DeNet.debug.xcconfig"; sourceTree = "<group>"; };
+		E93C0D6D2B08F50B00E26147 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		E9D4F68E2B051245005DBAD6 /* DeNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D4F6912B051245005DBAD6 /* DeNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeNetApp.swift; sourceTree = "<group>"; };
 		E9D4F6932B051245005DBAD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +28,7 @@
 		E9D4F6982B051246005DBAD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9D4F6A62B051506005DBAD6 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		E9D4F6C42B07691B005DBAD6 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
+		F39A54D87618C4EB839CE471 /* Pods-DeNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeNet.release.xcconfig"; path = "Target Support Files/Pods-DeNet/Pods-DeNet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +36,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB0DE340E4B2C511C84C2E1 /* Pods_DeNet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A0D272301D7DEDA582FA873 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05C7B34C0040E77E68E49DEE /* Pods_DeNet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A61FEBA5D0A44687C6A5C5D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72581D55740DED9F6C107CC9 /* Pods-DeNet.debug.xcconfig */,
+				F39A54D87618C4EB839CE471 /* Pods-DeNet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E93C0D6F2B0920E100E26147 /* RealmManagers */ = {
+			isa = PBXGroup;
+			children = (
+				E93C0D6D2B08F50B00E26147 /* RealmService.swift */,
+			);
+			path = RealmManagers;
+			sourceTree = "<group>";
+		};
 		E9D4F6852B051245005DBAD6 = {
 			isa = PBXGroup;
 			children = (
 				E9D4F6902B051245005DBAD6 /* DeNet */,
 				E9D4F68F2B051245005DBAD6 /* Products */,
+				A61FEBA5D0A44687C6A5C5D1 /* Pods */,
+				1A0D272301D7DEDA582FA873 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +127,7 @@
 				E9D4F69F2B051271005DBAD6 /* Application */,
 				E9D4F6A52B0514E1005DBAD6 /* Models */,
 				E9D4F6A02B051281005DBAD6 /* Views */,
+				E93C0D6F2B0920E100E26147 /* RealmManagers */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -120,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9D4F69C2B051246005DBAD6 /* Build configuration list for PBXNativeTarget "DeNet" */;
 			buildPhases = (
+				022627EFAACDB8827B3808BE /* [CP] Check Pods Manifest.lock */,
 				E9D4F68A2B051245005DBAD6 /* Sources */,
 				E9D4F68B2B051245005DBAD6 /* Frameworks */,
 				E9D4F68C2B051245005DBAD6 /* Resources */,
+				A1872FDC51DBE8E979D330ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,6 +215,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		022627EFAACDB8827B3808BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeNet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1872FDC51DBE8E979D330ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeNet/Pods-DeNet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeNet/Pods-DeNet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeNet/Pods-DeNet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9D4F68A2B051245005DBAD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -187,6 +266,7 @@
 				E9D4F6942B051245005DBAD6 /* ContentView.swift in Sources */,
 				E9D4F6922B051245005DBAD6 /* DeNetApp.swift in Sources */,
 				E9D4F6A72B051506005DBAD6 /* Node.swift in Sources */,
+				E93C0D6E2B08F50B00E26147 /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +389,7 @@
 		};
 		E9D4F69D2B051246005DBAD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72581D55740DED9F6C107CC9 /* Pods-DeNet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -338,6 +419,7 @@
 		};
 		E9D4F69E2B051246005DBAD6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F39A54D87618C4EB839CE471 /* Pods-DeNet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
