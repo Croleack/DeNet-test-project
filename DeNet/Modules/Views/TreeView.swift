@@ -18,9 +18,9 @@ struct TreeView: View {
 			 Button("Add") {
 				addNode()
 			 }
-				Button("Remove") {
-				    removeNode()
-				}
+			 Button("Remove") {
+				removeNode()
+			 }
 		  }
 		  Text(node.name)
 			 .font(.caption)
@@ -53,7 +53,6 @@ struct TreeView: View {
 		  return node
 	   }
     }
-    
     func generateRandomName() -> String {
 	   var randomBytes = [UInt8](repeating: 0, count: 20)
 	   _ = SecRandomCopyBytes(kSecRandomDefault,
