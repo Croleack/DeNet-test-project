@@ -14,13 +14,37 @@ class MyRealmService: ObservableObject {
     
     private let realm: Realm
     
+    @Published var rootNode: Node?
+    private var notificationToken: NotificationToken?
+    
     private init() {
 	   do {
 		  self.realm = try Realm()
+		  observeRealmChanges()
 	   } catch {
 		  fatalError("Error with Realm: \(error)")
 	   }
     }
+    
+    private func observeRealmChanges() {
+	   let nodes = realm.objects(Node.self)
+	   
+	   if nodes.isEmpty {
+		  let rootNode = Node(name: "RootNode")
+		  saveNode(rootNode)
+		  self.rootNode = rootNode
+	   } else {
+		  self.rootNode = nodes.first
+	   }
+	   
+	   notificationToken = nodes.observe { [weak self] _ in
+		  guard let self = self else { return }
+		  
+		  self.rootNode = nodes.first
+		  self.objectWillChange.send()
+	   }
+    }
+    
     func saveNode(_ node: Node) {
 	   do {
 		  try realm.write {
@@ -51,14 +75,16 @@ class MyRealmService: ObservableObject {
 		  print("Error deleting node: \(error)")
 	   }
     }
-    
-
-    
+ 
     func getNodes() -> Node? {
 	   guard let firstNode = realm.objects(Node.self).first else {
 		  print("Error retrieving nodes")
 		  return nil
 	   }
 	   return firstNode
+    }
+    
+    deinit {
+	   notificationToken?.invalidate()
     }
 }

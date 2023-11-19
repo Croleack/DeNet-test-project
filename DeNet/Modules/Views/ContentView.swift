@@ -10,25 +10,22 @@ import RealmSwift
 
 struct ContentView: View {
     
+    @ObservedObject var service = MyRealmService.shared
+    
     var rootNode: Node = { MyRealmService.shared.getNodes() ??
-	   Node(name: "DefaultNode")
+	   Node(name: "RootNode")
     }()
     
     var body: some View {
 	   
 	   NavigationView {
-		  TreeView(node: rootNode, isRootNode: true)
-			 .navigationBarTitle("Тестовое задание")
+		  if let rootNode = service.rootNode {
+			 TreeView(node: rootNode, isRootNode: true)
+				.navigationBarTitle("Тестовое задание")
+		  } else {
+			 Text("Root nil!")
+		  }
 	   }
-    }
-    
-    func generateRandomName() -> String {
-	   var randomBytes = [UInt8](repeating: 0, count: 20)
-	   _ = SecRandomCopyBytes(kSecRandomDefault,
-						 randomBytes.count,
-						 &randomBytes)
-	   
-	   return randomBytes.map { String(format: "%02hhx", $0) }.joined()
     }
 }
 

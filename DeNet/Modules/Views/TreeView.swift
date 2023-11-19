@@ -18,11 +18,9 @@ struct TreeView: View {
 			 Button("Add") {
 				addNode()
 			 }
-			 if !isRootNode {
 				Button("Remove") {
 				    removeNode()
 				}
-			 }
 		  }
 		  Text(node.name)
 			 .font(.caption)
@@ -40,8 +38,9 @@ struct TreeView: View {
     // MARK: - Methods
     
     func addNode() {
-	   MyRealmService.shared.addChild(node, child: Node(name: "newNode"))
-	   MyRealmService.shared.saveNode(getRootNode(node))
+	   let newNode = Node(name: generateRandomName())
+	   MyRealmService.shared.addChild(node, child: newNode)
+	   MyRealmService.shared.saveNode(newNode)
     }
     func removeNode() {
 	   MyRealmService.shared.deleteChild(node)
@@ -53,5 +52,14 @@ struct TreeView: View {
 	   } else {
 		  return node
 	   }
+    }
+    
+    func generateRandomName() -> String {
+	   var randomBytes = [UInt8](repeating: 0, count: 20)
+	   _ = SecRandomCopyBytes(kSecRandomDefault,
+						 randomBytes.count,
+						 &randomBytes)
+	   
+	   return randomBytes.map { String(format: "%02hhx", $0) }.joined()
     }
 }
