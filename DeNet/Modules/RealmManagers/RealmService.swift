@@ -83,7 +83,6 @@ class MyRealmService: ObservableObject {
 	   }
 	   return firstNode
     }
-    
     deinit {
 	   notificationToken?.invalidate()
     }
