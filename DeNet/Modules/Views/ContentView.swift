@@ -6,59 +6,31 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
     
-    @State private var rootNode = Node(name: "root", children: [
-	   Node(name: generateRandomName(), children: [
-		  Node(name: generateRandomName(), children: [
-			 Node(name: generateRandomName())
-		  ]),
-		  Node(name: generateRandomName(), children: [
-			 Node(name: generateRandomName())
-		  ]),
-	   ]),
-	   Node(name: generateRandomName(), children: [
-		  Node(name: generateRandomName()),
-	   ]),
-	   Node(name: generateRandomName(), children: [
-		  Node(name: generateRandomName()),
-	   ]),
-    ])
+    @ObservedObject var service = MyRealmService.shared
+    
+    var rootNode: Node = { MyRealmService.shared.getNodes() ??
+	   Node(name: "RootNode")
+    }()
     
     var body: some View {
+	   
 	   NavigationView {
-		  TreeView(node: rootNode)
-			 .navigationBarTitle("Тестовое задание")
-			 .navigationBarItems(
-				trailing:
-				    HStack {
-					   Button(action: {
-						  let newChild = Node(name: generateRandomName())
-						  self.rootNode.addChild(newChild)
-					   }) {
-						  Text("Add")
-					   }
-					   Button(action: {
-						 
-					   }) {
-						  Text("Delete")
-					   }
-				    }
-			 )
+		  if let rootNode = service.rootNode {
+			 TreeView(node: rootNode, isRootNode: true)
+				.navigationBarTitle("Тестовое задание")
+		  } else {
+			 Text("Root nil!")
+		  }
 	   }
     }
 }
 
-func generateRandomName() -> String {
-    var randomBytes = [UInt8](repeating: 0, count: 20)
-    _ = SecRandomCopyBytes(kSecRandomDefault, randomBytes.count, &randomBytes)
-    
-    return randomBytes.map { String(format: "%02hhx", $0) }.joined()
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+	   ContentView()
     }
 }

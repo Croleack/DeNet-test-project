@@ -6,28 +6,19 @@
 //
 
 import Foundation
+import RealmSwift
+import Combine
 
-class Node: Identifiable {
-    var id = UUID()
-    let name: String
-    var children: [Node] = []
+class Node: Object, Identifiable {
+    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var name: String = ""
+    var childrens = List<Node>()
     weak var parent: Node?
     
-    init(name: String, children: [Node] = []) {
+    convenience init(name: String, children: [Node] = []) {
+	   self.init()
 	   self.name = name
-	   self.children = children
-	   self.children.forEach { $0.parent = self }
-    }
-    
-    func addChild(_ child: Node) {
-	   children.append(child)
-	   child.parent = self
-    }
-    
-    func removeChild(_ child: Node) {
-	   if let index = children.firstIndex(where: { $0.id == child.id }) {
-		  children.remove(at: index)
-		  child.parent = nil
-	   }
+	   childrens.append(objectsIn: children)
+	   childrens.forEach { $0.parent = self }
     }
 }
