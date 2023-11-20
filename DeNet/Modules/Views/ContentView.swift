@@ -9,7 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct ContentView: View {
-    
+
     @ObservedObject var service = MyRealmService.shared
     
     var rootNode: Node = { MyRealmService.shared.getNodes() ??

@@ -11,12 +11,11 @@ import Combine
 
 class MyRealmService: ObservableObject {
     static let shared = MyRealmService()
-    
+    // MARK: - Properties
     private let realm: Realm
-    
     @Published var rootNode: Node?
     private var notificationToken: NotificationToken?
-    
+    // MARK: - Initialization
     private init() {
 	   do {
 		  self.realm = try Realm()
@@ -25,7 +24,7 @@ class MyRealmService: ObservableObject {
 		  fatalError("Error with Realm: \(error)")
 	   }
     }
-    
+    // MARK: - Realm Observation
     private func observeRealmChanges() {
 	   let nodes = realm.objects(Node.self)
 	   
@@ -45,6 +44,10 @@ class MyRealmService: ObservableObject {
 	   }
     }
     
+    deinit {
+	   notificationToken?.invalidate()
+    }
+    // MARK: - Node Operations
     func saveNode(_ node: Node) {
 	   do {
 		  try realm.write {
@@ -83,7 +86,5 @@ class MyRealmService: ObservableObject {
 	   }
 	   return firstNode
     }
-    deinit {
-	   notificationToken?.invalidate()
-    }
+
 }
