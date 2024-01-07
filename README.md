@@ -1,6 +1,6 @@
 # test-project
 
-Тестовое задание, находится в разработке:
+Тестовое задание:
 Стэк технологий SwiftUI, Combine, Realm
 1. Создать структуру дерева, состоящую из узлов (Node) имеющих, название, детей и ссылку на родителя(такие же узлы, лучше использовать структуры)
 2. Написать приложение состоящее из одного View с рекурсивной навигацией внутри дерева(первый экран открывает корневой и далее мы можем пройти в экраны child)
@@ -10,3 +10,9 @@
 
 демонстрация выполненного задания
 https://drive.google.com/file/d/15HZ4gFgqCkXtyfA_PeiTyryHLg9-HUaL/view?usp=sharing
+
+
+<img width="714" alt="Снимок экрана 2024-01-07 в 21 49 10" src="https://github.com/Croleack/DeNet-test-project/assets/121854191/dd16b639-e95a-45f3-9b44-d38fa782a9f6">
+
+<img width="734" alt="Снимок экрана 2024-01-07 в 21 49 26" src="https://github.com/Croleack/DeNet-test-project/assets/121854191/f36b67bf-ff9d-4996-aadd-a4ce898cf18e">
+
